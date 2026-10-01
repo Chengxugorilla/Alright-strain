@@ -1,0 +1,3975 @@
+{
+  "files": [
+    {
+      "file": "clade注释_sorted/B_victoria/Victoria_results_KX058884.tsv",
+      "rows": 76968,
+      "unique_seqName": 76968,
+      "duplicate_seqName_rows": 0,
+      "tsv_structure": {
+        "rows_with_extra_columns": 0,
+        "rows_with_missing_columns": 0
+      },
+      "primary_clade": {
+        "assigned": {
+          "n": 76155,
+          "rate": 0.989437
+        },
+        "unassigned": {
+          "n": 808,
+          "rate": 0.010498
+        },
+        "blank": {
+          "n": 5,
+          "rate": 6.5e-05
+        }
+      },
+      "rows_with_error_or_warning": {
+        "n": 3735,
+        "rate": 0.048527,
+        "by_primary_status": {
+          "assigned": 3307,
+          "unassigned": 423,
+          "blank": 5
+        }
+      },
+      "rows_with_errors": {
+        "n": 5,
+        "rate": 6.5e-05
+      },
+      "rows_with_warnings": {
+        "n": 3730,
+        "rate": 0.048462
+      },
+      "error_categories": {
+        "unknown_nucleotide": 5
+      },
+      "assignment_fields": {
+        "clade": {
+          "assigned": 76155,
+          "unassigned": 808,
+          "blank": 5
+        },
+        "legacy-clade-vic": {
+          "assigned": 76155,
+          "unassigned": 808,
+          "blank": 5
+        },
+        "legacy-clade-yam": {
+          "assigned": 0,
+          "unassigned": 76963,
+          "blank": 5
+        },
+        "lineage": {
+          "assigned": 76955,
+          "unassigned": 8,
+          "blank": 5
+        }
+      },
+      "assignment_value_top": {
+        "clade": {
+          "assigned": [
+            [
+              "C.5.1",
+              14062
+            ],
+            [
+              "A",
+              10793
+            ],
+            [
+              "C.5.6",
+              9515
+            ],
+            [
+              "C.5.7",
+              9182
+            ],
+            [
+              "A.3.2",
+              8044
+            ],
+            [
+              "C.5",
+              4803
+            ],
+            [
+              "C.3.1",
+              4369
+            ],
+            [
+              "C.5.6.1",
+              3773
+            ],
+            [
+              "A.1",
+              2266
+            ],
+            [
+              "C.3",
+              1596
+            ],
+            [
+              "B",
+              1205
+            ],
+            [
+              "C.5.4",
+              923
+            ],
+            [
+              "C.1",
+              868
+            ],
+            [
+              "A.3",
+              795
+            ],
+            [
+              "C.3.3",
+              733
+            ],
+            [
+              "A.3.1.1",
+              700
+            ],
+            [
+              "C.2",
+              624
+            ],
+            [
+              "C",
+              418
+            ],
+            [
+              "C.5.3",
+              373
+            ],
+            [
+              "C.5.5",
+              343
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              808
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              5
+            ]
+          ]
+        },
+        "legacy-clade-vic": {
+          "assigned": [
+            [
+              "V1A.3a.2",
+              51964
+            ],
+            [
+              "V1A",
+              10793
+            ],
+            [
+              "V1A.3",
+              8938
+            ],
+            [
+              "V1A.1",
+              2266
+            ],
+            [
+              "V1B",
+              1205
+            ],
+            [
+              "V1A.3a.1",
+              700
+            ],
+            [
+              "V1A.3a",
+              154
+            ],
+            [
+              "V1A.2",
+              135
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              808
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              5
+            ]
+          ]
+        },
+        "legacy-clade-yam": {
+          "assigned": [
+            [
+              "unassigned",
+              76155
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              808
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              5
+            ]
+          ]
+        },
+        "lineage": {
+          "assigned": [
+            [
+              "Vic",
+              76155
+            ]
+          ],
+          "unassigned": [
+            [
+              "Vic",
+              800
+            ],
+            [
+              "unassigned",
+              8
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              5
+            ]
+          ]
+        }
+      },
+      "qc_by_primary_status": {
+        "bad": {
+          "assigned": 534,
+          "unassigned": 8
+        },
+        "blank": {
+          "blank": 5
+        },
+        "good": {
+          "assigned": 75090,
+          "unassigned": 753
+        },
+        "mediocre": {
+          "assigned": 531,
+          "unassigned": 47
+        }
+      },
+      "metrics_by_primary_status": {
+        "assigned": {
+          "qc.overallScore": {
+            "n": 76155,
+            "median": 0.0,
+            "mean": 3.251584
+          },
+          "coverage": {
+            "n": 76155,
+            "median": 0.932626,
+            "mean": 0.944623
+          },
+          "totalMissing": {
+            "n": 76155,
+            "median": 0.0,
+            "mean": 2.609257
+          },
+          "totalNonACGTNs": {
+            "n": 76155,
+            "median": 0.0,
+            "mean": 0.152426
+          },
+          "totalFrameShifts": {
+            "n": 76155,
+            "median": 0.0,
+            "mean": 0.002311
+          },
+          "totalUnknownAa": {
+            "n": 76155,
+            "median": 0.0,
+            "mean": 0.796468
+          },
+          "alignmentStart": {
+            "n": 76155,
+            "median": 34.0,
+            "mean": 27.437883
+          },
+          "alignmentEnd": {
+            "n": 76155,
+            "median": 1791.0,
+            "mean": 1809.813827
+          }
+        },
+        "unassigned": {
+          "qc.overallScore": {
+            "n": 808,
+            "median": 0.0,
+            "mean": 8.37696
+          },
+          "coverage": {
+            "n": 808,
+            "median": 0.569761,
+            "mean": 0.712897
+          },
+          "totalMissing": {
+            "n": 808,
+            "median": 0.0,
+            "mean": 0.424505
+          },
+          "totalNonACGTNs": {
+            "n": 808,
+            "median": 0.0,
+            "mean": 0.142327
+          },
+          "totalFrameShifts": {
+            "n": 808,
+            "median": 0.0,
+            "mean": 0.055693
+          },
+          "totalUnknownAa": {
+            "n": 808,
+            "median": 0.0,
+            "mean": 4.334158
+          },
+          "alignmentStart": {
+            "n": 808,
+            "median": 46.0,
+            "mean": 55.67203
+          },
+          "alignmentEnd": {
+            "n": 808,
+            "median": 1126.0,
+            "mean": 1399.049505
+          }
+        },
+        "blank": {}
+      },
+      "year_by_primary_status": {
+        "1905": {
+          "assigned": 1
+        },
+        "1964": {
+          "unassigned": 1
+        },
+        "1969": {
+          "unassigned": 1
+        },
+        "1984": {
+          "unassigned": 1
+        },
+        "1985": {
+          "unassigned": 1
+        },
+        "1986": {
+          "unassigned": 1
+        },
+        "1990": {
+          "unassigned": 1
+        },
+        "1991": {
+          "unassigned": 1
+        },
+        "1993": {
+          "unassigned": 1
+        },
+        "1994": {
+          "unassigned": 1
+        },
+        "1996": {
+          "unassigned": 1
+        },
+        "1997": {
+          "unassigned": 2
+        },
+        "1998": {
+          "unassigned": 2
+        },
+        "1999": {
+          "unassigned": 7
+        },
+        "2000": {
+          "unassigned": 1
+        },
+        "2001": {
+          "unassigned": 6
+        },
+        "2002": {
+          "unassigned": 34
+        },
+        "2003": {
+          "unassigned": 45
+        },
+        "2004": {
+          "unassigned": 26
+        },
+        "2005": {
+          "unassigned": 83,
+          "assigned": 1
+        },
+        "2006": {
+          "unassigned": 141
+        },
+        "2007": {
+          "unassigned": 114
+        },
+        "2008": {
+          "assigned": 73,
+          "unassigned": 157
+        },
+        "2009": {
+          "assigned": 260,
+          "unassigned": 79
+        },
+        "2010": {
+          "assigned": 751,
+          "unassigned": 54
+        },
+        "2011": {
+          "assigned": 1021,
+          "unassigned": 37
+        },
+        "2012": {
+          "assigned": 870,
+          "unassigned": 2
+        },
+        "2013": {
+          "assigned": 557
+        },
+        "2014": {
+          "assigned": 410
+        },
+        "2015": {
+          "assigned": 1107
+        },
+        "2016": {
+          "assigned": 3921,
+          "blank": 1
+        },
+        "2017": {
+          "assigned": 2784
+        },
+        "2018": {
+          "assigned": 1638
+        },
+        "2019": {
+          "assigned": 7073
+        },
+        "2020": {
+          "assigned": 2954
+        },
+        "2021": {
+          "assigned": 1468
+        },
+        "2022": {
+          "assigned": 2076
+        },
+        "2023": {
+          "assigned": 8358,
+          "blank": 3,
+          "unassigned": 3
+        },
+        "2024": {
+          "assigned": 14742,
+          "unassigned": 4,
+          "blank": 1
+        },
+        "2025": {
+          "assigned": 17741
+        },
+        "2026": {
+          "assigned": 8349,
+          "unassigned": 1
+        }
+      },
+      "metadata_lineage_top": [
+        {
+          "value": "V1A.3a.2",
+          "n": 51545,
+          "assigned": 51543,
+          "unassigned": 0,
+          "blank": 2,
+          "not_assigned_rate": 3.9e-05
+        },
+        {
+          "value": "V1A",
+          "n": 11625,
+          "assigned": 10936,
+          "unassigned": 688,
+          "blank": 1,
+          "not_assigned_rate": 0.059269
+        },
+        {
+          "value": "V1A.3",
+          "n": 8892,
+          "assigned": 8892,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "V1A.1",
+          "n": 2312,
+          "assigned": 2312,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "V1B",
+          "n": 1091,
+          "assigned": 1089,
+          "unassigned": 2,
+          "blank": 0,
+          "not_assigned_rate": 0.001833
+        },
+        {
+          "value": "V1A.3a.1",
+          "n": 695,
+          "assigned": 695,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "unassigned",
+          "n": 543,
+          "assigned": 423,
+          "unassigned": 118,
+          "blank": 2,
+          "not_assigned_rate": 0.220994
+        },
+        {
+          "value": "V1A.3a",
+          "n": 159,
+          "assigned": 159,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "V1A.2",
+          "n": 101,
+          "assigned": 101,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "unknown",
+          "n": 5,
+          "assigned": 5,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        }
+      ],
+      "metadata_subtype": {
+        "B": {
+          "assigned": 76155,
+          "unassigned": 808,
+          "blank": 5
+        }
+      },
+      "columns": {
+        "count": 86,
+        "assignment": [
+          "clade",
+          "legacy-clade-vic",
+          "legacy-clade-yam",
+          "lineage"
+        ],
+        "error_or_warning": [
+          "warnings",
+          "errors"
+        ]
+      }
+    },
+    {
+      "file": "clade注释_sorted/H1N1/h1n1_non_pdm_results.tsv",
+      "rows": 576,
+      "unique_seqName": 576,
+      "duplicate_seqName_rows": 0,
+      "tsv_structure": {
+        "rows_with_extra_columns": 0,
+        "rows_with_missing_columns": 0
+      },
+      "primary_clade": {
+        "assigned": {
+          "n": 0,
+          "rate": 0.0
+        },
+        "unassigned": {
+          "n": 0,
+          "rate": 0.0
+        },
+        "blank": {
+          "n": 576,
+          "rate": 1.0
+        }
+      },
+      "rows_with_error_or_warning": {
+        "n": 175,
+        "rate": 0.303819,
+        "by_primary_status": {
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 175
+        }
+      },
+      "rows_with_errors": {
+        "n": 26,
+        "rate": 0.045139
+      },
+      "rows_with_warnings": {
+        "n": 149,
+        "rate": 0.258681
+      },
+      "error_categories": {
+        "alignment_error": 24,
+        "unknown_nucleotide": 2
+      },
+      "assignment_fields": {
+        "clade": {
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 576
+        }
+      },
+      "assignment_value_top": {
+        "clade": {
+          "assigned": [],
+          "unassigned": [],
+          "blank": [
+            [
+              "<blank>",
+              576
+            ]
+          ]
+        }
+      },
+      "qc_by_primary_status": {
+        "bad": {
+          "blank": 28
+        },
+        "blank": {
+          "blank": 26
+        },
+        "good": {
+          "blank": 18
+        },
+        "mediocre": {
+          "blank": 504
+        }
+      },
+      "metrics_by_primary_status": {
+        "assigned": {},
+        "unassigned": {},
+        "blank": {
+          "qc.overallScore": {
+            "n": 550,
+            "median": 58.027778,
+            "mean": 64.747273
+          },
+          "coverage": {
+            "n": 550,
+            "median": 0.95613,
+            "mean": 0.875525
+          },
+          "totalMissing": {
+            "n": 550,
+            "median": 0.0,
+            "mean": 0.127273
+          },
+          "totalNonACGTNs": {
+            "n": 550,
+            "median": 0.0,
+            "mean": 0.427273
+          },
+          "totalFrameShifts": {
+            "n": 550,
+            "median": 1.0,
+            "mean": 0.958182
+          },
+          "totalUnknownAa": {
+            "n": 550,
+            "median": 4.0,
+            "mean": 4.403636
+          },
+          "alignmentStart": {
+            "n": 550,
+            "median": 33.0,
+            "mean": 53.950909
+          },
+          "alignmentEnd": {
+            "n": 550,
+            "median": 1733.0,
+            "mean": 1610.189091
+          }
+        }
+      },
+      "year_by_primary_status": {
+        "2009": {
+          "blank": 561
+        },
+        "2010": {
+          "blank": 12
+        },
+        "2011": {
+          "blank": 1
+        },
+        "2012": {
+          "blank": 1
+        },
+        "2024": {
+          "blank": 1
+        }
+      },
+      "metadata_lineage_top": [
+        {
+          "value": "6B.1A.6",
+          "n": 270,
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 270,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "unassigned",
+          "n": 198,
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 198,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "1B.1.1",
+          "n": 106,
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 106,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.5a",
+          "n": 1,
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "INTL",
+          "n": 1,
+          "assigned": 0,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 1.0
+        }
+      ],
+      "metadata_subtype": {
+        "A_/_H1N1": {
+          "blank": 576
+        }
+      },
+      "columns": {
+        "count": 82,
+        "assignment": [
+          "clade"
+        ],
+        "error_or_warning": [
+          "warnings",
+          "errors"
+        ]
+      }
+    },
+    {
+      "file": "clade注释_sorted/H1N1/h1n1_results_CY121680_sorted.tsv",
+      "rows": 23823,
+      "unique_seqName": 23823,
+      "duplicate_seqName_rows": 0,
+      "tsv_structure": {
+        "rows_with_extra_columns": 0,
+        "rows_with_missing_columns": 0
+      },
+      "primary_clade": {
+        "assigned": {
+          "n": 0,
+          "rate": 0.0
+        },
+        "unassigned": {
+          "n": 23816,
+          "rate": 0.999706
+        },
+        "blank": {
+          "n": 7,
+          "rate": 0.000294
+        }
+      },
+      "rows_with_error_or_warning": {
+        "n": 3283,
+        "rate": 0.137808,
+        "by_primary_status": {
+          "assigned": 0,
+          "unassigned": 3276,
+          "blank": 7
+        }
+      },
+      "rows_with_errors": {
+        "n": 7,
+        "rate": 0.000294
+      },
+      "rows_with_warnings": {
+        "n": 3276,
+        "rate": 0.137514
+      },
+      "error_categories": {
+        "unknown_nucleotide": 7
+      },
+      "assignment_fields": {
+        "clade": {
+          "assigned": 0,
+          "unassigned": 23816,
+          "blank": 7
+        },
+        "proposedSubclade": {
+          "assigned": 0,
+          "unassigned": 23816,
+          "blank": 7
+        },
+        "subclade": {
+          "assigned": 0,
+          "unassigned": 23816,
+          "blank": 7
+        },
+        "short-clade": {
+          "assigned": 7569,
+          "unassigned": 16247,
+          "blank": 7
+        },
+        "legacy-clade": {
+          "assigned": 23816,
+          "unassigned": 0,
+          "blank": 7
+        }
+      },
+      "assignment_value_top": {
+        "clade": {
+          "assigned": [],
+          "unassigned": [
+            [
+              "unassigned",
+              23816
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              7
+            ]
+          ]
+        },
+        "proposedSubclade": {
+          "assigned": [],
+          "unassigned": [
+            [
+              "unassigned",
+              23816
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              7
+            ]
+          ]
+        },
+        "subclade": {
+          "assigned": [],
+          "unassigned": [
+            [
+              "unassigned",
+              23816
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              7
+            ]
+          ]
+        },
+        "short-clade": {
+          "assigned": [],
+          "unassigned": [
+            [
+              "unassigned",
+              16247
+            ],
+            [
+              "6B",
+              5411
+            ],
+            [
+              "6C",
+              1424
+            ],
+            [
+              "6B.2",
+              459
+            ],
+            [
+              "6B.1",
+              221
+            ],
+            [
+              "8",
+              54
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              7
+            ]
+          ]
+        },
+        "legacy-clade": {
+          "assigned": [],
+          "unassigned": [
+            [
+              "1",
+              12663
+            ],
+            [
+              "6B",
+              5411
+            ],
+            [
+              "6",
+              1532
+            ],
+            [
+              "6C",
+              1424
+            ],
+            [
+              "7",
+              1287
+            ],
+            [
+              "6B.2",
+              459
+            ],
+            [
+              "4",
+              438
+            ],
+            [
+              "3",
+              223
+            ],
+            [
+              "6B.1",
+              221
+            ],
+            [
+              "2",
+              104
+            ],
+            [
+              "8",
+              54
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              7
+            ]
+          ]
+        }
+      },
+      "qc_by_primary_status": {
+        "bad": {
+          "unassigned": 266
+        },
+        "blank": {
+          "blank": 7
+        },
+        "good": {
+          "unassigned": 23114
+        },
+        "mediocre": {
+          "unassigned": 436
+        }
+      },
+      "metrics_by_primary_status": {
+        "assigned": {},
+        "unassigned": {
+          "qc.overallScore": {
+            "n": 23816,
+            "median": 0.0,
+            "mean": 14.530719
+          },
+          "coverage": {
+            "n": 23816,
+            "median": 0.97089,
+            "mean": 0.888395
+          },
+          "totalMissing": {
+            "n": 23816,
+            "median": 0.0,
+            "mean": 0.03548
+          },
+          "totalNonACGTNs": {
+            "n": 23816,
+            "median": 0.0,
+            "mean": 0.185338
+          },
+          "totalFrameShifts": {
+            "n": 23816,
+            "median": 0.0,
+            "mean": 0.009405
+          },
+          "totalUnknownAa": {
+            "n": 23816,
+            "median": 0.0,
+            "mean": 0.559918
+          },
+          "alignmentStart": {
+            "n": 23816,
+            "median": 21.0,
+            "mean": 42.818399
+          },
+          "alignmentEnd": {
+            "n": 23816,
+            "median": 1721.0,
+            "mean": 1598.507348
+          }
+        },
+        "blank": {}
+      },
+      "year_by_primary_status": {
+        "2009": {
+          "unassigned": 10600
+        },
+        "2010": {
+          "unassigned": 2217
+        },
+        "2011": {
+          "unassigned": 2235
+        },
+        "2012": {
+          "unassigned": 1026
+        },
+        "2013": {
+          "unassigned": 2406,
+          "blank": 5
+        },
+        "2014": {
+          "unassigned": 2610,
+          "blank": 1
+        },
+        "2015": {
+          "unassigned": 1897
+        },
+        "2016": {
+          "unassigned": 655
+        },
+        "2017": {
+          "unassigned": 120
+        },
+        "2018": {
+          "unassigned": 13
+        },
+        "2019": {
+          "unassigned": 5
+        },
+        "2020": {
+          "unassigned": 1
+        },
+        "2021": {
+          "unassigned": 8
+        },
+        "2022": {
+          "unassigned": 4
+        },
+        "2023": {
+          "blank": 1,
+          "unassigned": 13
+        },
+        "2024": {
+          "unassigned": 4
+        },
+        "2025": {
+          "unassigned": 1
+        },
+        "2026": {
+          "unassigned": 1
+        }
+      },
+      "metadata_lineage_top": [
+        {
+          "value": "pdm",
+          "n": 11569,
+          "assigned": 0,
+          "unassigned": 11568,
+          "blank": 1,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1",
+          "n": 6256,
+          "assigned": 0,
+          "unassigned": 6253,
+          "blank": 3,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "1A.3.3.2",
+          "n": 4358,
+          "assigned": 0,
+          "unassigned": 4357,
+          "blank": 1,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.2",
+          "n": 730,
+          "assigned": 0,
+          "unassigned": 730,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "clade",
+          "n": 452,
+          "assigned": 0,
+          "unassigned": 452,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "unknown",
+          "n": 301,
+          "assigned": 0,
+          "unassigned": 301,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "unassigned",
+          "n": 149,
+          "assigned": 0,
+          "unassigned": 147,
+          "blank": 2,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.5",
+          "n": 6,
+          "assigned": 0,
+          "unassigned": 6,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "1A.3.2",
+          "n": 1,
+          "assigned": 0,
+          "unassigned": 1,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.5a.2",
+          "n": 1,
+          "assigned": 0,
+          "unassigned": 1,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        }
+      ],
+      "metadata_subtype": {
+        "A_/_H1N1": {
+          "unassigned": 23816,
+          "blank": 7
+        }
+      },
+      "columns": {
+        "count": 92,
+        "assignment": [
+          "clade",
+          "proposedSubclade",
+          "subclade",
+          "short-clade",
+          "legacy-clade"
+        ],
+        "error_or_warning": [
+          "warnings",
+          "errors"
+        ]
+      }
+    },
+    {
+      "file": "clade注释_sorted/H1N1/h1n1_results_MW626062_sorted.tsv",
+      "rows": 165911,
+      "unique_seqName": 165911,
+      "duplicate_seqName_rows": 0,
+      "tsv_structure": {
+        "rows_with_extra_columns": 0,
+        "rows_with_missing_columns": 0
+      },
+      "primary_clade": {
+        "assigned": {
+          "n": 138251,
+          "rate": 0.833284
+        },
+        "unassigned": {
+          "n": 27534,
+          "rate": 0.165956
+        },
+        "blank": {
+          "n": 126,
+          "rate": 0.000759
+        }
+      },
+      "rows_with_error_or_warning": {
+        "n": 3655,
+        "rate": 0.02203,
+        "by_primary_status": {
+          "assigned": 2253,
+          "unassigned": 1276,
+          "blank": 126
+        }
+      },
+      "rows_with_errors": {
+        "n": 126,
+        "rate": 0.000759
+      },
+      "rows_with_warnings": {
+        "n": 3529,
+        "rate": 0.02127
+      },
+      "error_categories": {
+        "unknown_nucleotide": 125,
+        "alignment_error": 1
+      },
+      "assignment_fields": {
+        "clade": {
+          "assigned": 138251,
+          "unassigned": 27534,
+          "blank": 126
+        },
+        "proposedSubclade": {
+          "assigned": 138251,
+          "unassigned": 27534,
+          "blank": 126
+        },
+        "subclade": {
+          "assigned": 138251,
+          "unassigned": 27534,
+          "blank": 126
+        },
+        "short-clade": {
+          "assigned": 165783,
+          "unassigned": 2,
+          "blank": 126
+        },
+        "legacy-clade": {
+          "assigned": 165785,
+          "unassigned": 0,
+          "blank": 126
+        }
+      },
+      "assignment_value_top": {
+        "clade": {
+          "assigned": [
+            [
+              "D.3.1",
+              22502
+            ],
+            [
+              "C.1.9.3",
+              17775
+            ],
+            [
+              "C.1",
+              16303
+            ],
+            [
+              "D.3.1.1",
+              14406
+            ],
+            [
+              "C.1.9",
+              12839
+            ],
+            [
+              "A",
+              7252
+            ],
+            [
+              "B",
+              7032
+            ],
+            [
+              "D",
+              6096
+            ],
+            [
+              "D.1",
+              4930
+            ],
+            [
+              "C.1.1",
+              4474
+            ],
+            [
+              "C.1.8",
+              4450
+            ],
+            [
+              "D.5",
+              3342
+            ],
+            [
+              "D.2",
+              3098
+            ],
+            [
+              "C",
+              3091
+            ],
+            [
+              "C.1.9.2",
+              2504
+            ],
+            [
+              "C.1.9.1",
+              1880
+            ],
+            [
+              "C.1.2",
+              1276
+            ],
+            [
+              "D.3",
+              1077
+            ],
+            [
+              "C.1.7",
+              996
+            ],
+            [
+              "D.4",
+              811
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              27534
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              126
+            ]
+          ]
+        },
+        "proposedSubclade": {
+          "assigned": [
+            [
+              "D.3.1",
+              22502
+            ],
+            [
+              "C.1.9.3",
+              17775
+            ],
+            [
+              "C.1",
+              16303
+            ],
+            [
+              "D.3.1.1",
+              14406
+            ],
+            [
+              "C.1.9",
+              12839
+            ],
+            [
+              "A",
+              7252
+            ],
+            [
+              "B",
+              7032
+            ],
+            [
+              "D",
+              6096
+            ],
+            [
+              "D.1",
+              4930
+            ],
+            [
+              "C.1.1",
+              4474
+            ],
+            [
+              "C.1.8",
+              4450
+            ],
+            [
+              "D.5",
+              3342
+            ],
+            [
+              "D.2",
+              3098
+            ],
+            [
+              "C",
+              3091
+            ],
+            [
+              "C.1.9.2",
+              2504
+            ],
+            [
+              "C.1.9.1",
+              1880
+            ],
+            [
+              "C.1.2",
+              1276
+            ],
+            [
+              "D.3",
+              1077
+            ],
+            [
+              "C.1.7",
+              996
+            ],
+            [
+              "D.4",
+              811
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              27534
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              126
+            ]
+          ]
+        },
+        "subclade": {
+          "assigned": [
+            [
+              "D.3.1",
+              22502
+            ],
+            [
+              "C.1.9.3",
+              17775
+            ],
+            [
+              "C.1",
+              16303
+            ],
+            [
+              "D.3.1.1",
+              14406
+            ],
+            [
+              "C.1.9",
+              12839
+            ],
+            [
+              "A",
+              7252
+            ],
+            [
+              "B",
+              7032
+            ],
+            [
+              "D",
+              6096
+            ],
+            [
+              "D.1",
+              4930
+            ],
+            [
+              "C.1.1",
+              4474
+            ],
+            [
+              "C.1.8",
+              4450
+            ],
+            [
+              "D.5",
+              3342
+            ],
+            [
+              "D.2",
+              3098
+            ],
+            [
+              "C",
+              3091
+            ],
+            [
+              "C.1.9.2",
+              2504
+            ],
+            [
+              "C.1.9.1",
+              1880
+            ],
+            [
+              "C.1.2",
+              1276
+            ],
+            [
+              "D.3",
+              1077
+            ],
+            [
+              "C.1.7",
+              996
+            ],
+            [
+              "D.4",
+              811
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              27534
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              126
+            ]
+          ]
+        },
+        "short-clade": {
+          "assigned": [
+            [
+              "5a.2a.1",
+              60736
+            ],
+            [
+              "5a.2a",
+              60140
+            ],
+            [
+              "5a",
+              7252
+            ],
+            [
+              "5a.1",
+              7032
+            ],
+            [
+              "5a.2",
+              3091
+            ]
+          ],
+          "unassigned": [
+            [
+              "6B.1A",
+              9432
+            ],
+            [
+              "6B.1",
+              9253
+            ],
+            [
+              "1",
+              3855
+            ],
+            [
+              "5b",
+              3120
+            ],
+            [
+              "6",
+              1080
+            ],
+            [
+              "6B",
+              544
+            ],
+            [
+              "5",
+              213
+            ],
+            [
+              "6B.2",
+              35
+            ],
+            [
+              "unassigned",
+              2
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              126
+            ]
+          ]
+        },
+        "legacy-clade": {
+          "assigned": [
+            [
+              "6B.1A.5a.2a.1",
+              60736
+            ],
+            [
+              "6B.1A.5a.2a",
+              60140
+            ],
+            [
+              "6B.1A.5a",
+              7252
+            ],
+            [
+              "6B.1A.5a.1",
+              7032
+            ],
+            [
+              "6B.1A.5a.2",
+              3091
+            ]
+          ],
+          "unassigned": [
+            [
+              "6B.1",
+              9253
+            ],
+            [
+              "6B.1A",
+              5532
+            ],
+            [
+              "6B.1A.1",
+              3855
+            ],
+            [
+              "6B.1A.5b",
+              3120
+            ],
+            [
+              "6B.1A.7",
+              2021
+            ],
+            [
+              "6B.1A.6",
+              1080
+            ],
+            [
+              "6B.1A.2",
+              1075
+            ],
+            [
+              "6B.1A.3",
+              730
+            ],
+            [
+              "6B",
+              544
+            ],
+            [
+              "6B.1A.5",
+              213
+            ],
+            [
+              "6B.1A.4",
+              74
+            ],
+            [
+              "6B.2",
+              35
+            ],
+            [
+              "1",
+              2
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              126
+            ]
+          ]
+        }
+      },
+      "qc_by_primary_status": {
+        "bad": {
+          "assigned": 685,
+          "unassigned": 144
+        },
+        "blank": {
+          "blank": 126
+        },
+        "good": {
+          "assigned": 136345,
+          "unassigned": 27028
+        },
+        "mediocre": {
+          "assigned": 1221,
+          "unassigned": 362
+        }
+      },
+      "metrics_by_primary_status": {
+        "assigned": {
+          "qc.overallScore": {
+            "n": 138251,
+            "median": 0.0,
+            "mean": 3.765735
+          },
+          "coverage": {
+            "n": 138251,
+            "median": 0.97089,
+            "mean": 0.975592
+          },
+          "totalMissing": {
+            "n": 138251,
+            "median": 0.0,
+            "mean": 2.102943
+          },
+          "totalNonACGTNs": {
+            "n": 138251,
+            "median": 0.0,
+            "mean": 0.10392
+          },
+          "totalFrameShifts": {
+            "n": 138251,
+            "median": 0.0,
+            "mean": 0.005259
+          },
+          "totalUnknownAa": {
+            "n": 138251,
+            "median": 0.0,
+            "mean": 1.206675
+          },
+          "alignmentStart": {
+            "n": 138251,
+            "median": 21.0,
+            "mean": 13.979501
+          },
+          "alignmentEnd": {
+            "n": 138251,
+            "median": 1721.0,
+            "mean": 1724.423925
+          }
+        },
+        "unassigned": {
+          "qc.overallScore": {
+            "n": 27534,
+            "median": 0.0,
+            "mean": 4.292917
+          },
+          "coverage": {
+            "n": 27534,
+            "median": 0.984018,
+            "mean": 0.961524
+          },
+          "totalMissing": {
+            "n": 27534,
+            "median": 0.0,
+            "mean": 0.16387
+          },
+          "totalNonACGTNs": {
+            "n": 27534,
+            "median": 0.0,
+            "mean": 0.173168
+          },
+          "totalFrameShifts": {
+            "n": 27534,
+            "median": 0.0,
+            "mean": 0.00207
+          },
+          "totalUnknownAa": {
+            "n": 27534,
+            "median": 0.0,
+            "mean": 0.372412
+          },
+          "alignmentStart": {
+            "n": 27534,
+            "median": 21.0,
+            "mean": 15.191254
+          },
+          "alignmentEnd": {
+            "n": 27534,
+            "median": 1746.5,
+            "mean": 1699.118036
+          }
+        },
+        "blank": {}
+      },
+      "year_by_primary_status": {
+        "2009": {
+          "unassigned": 2
+        },
+        "2012": {
+          "blank": 2,
+          "assigned": 1
+        },
+        "2013": {
+          "assigned": 1,
+          "unassigned": 1
+        },
+        "2014": {
+          "unassigned": 7,
+          "assigned": 1
+        },
+        "2015": {
+          "unassigned": 1488
+        },
+        "2016": {
+          "unassigned": 6723
+        },
+        "2017": {
+          "unassigned": 3695,
+          "blank": 1
+        },
+        "2018": {
+          "unassigned": 9116,
+          "assigned": 968,
+          "blank": 18
+        },
+        "2019": {
+          "assigned": 7877,
+          "unassigned": 6006,
+          "blank": 77
+        },
+        "2020": {
+          "assigned": 6444,
+          "unassigned": 469,
+          "blank": 2
+        },
+        "2021": {
+          "assigned": 981,
+          "unassigned": 13
+        },
+        "2022": {
+          "assigned": 10793,
+          "blank": 2,
+          "unassigned": 7
+        },
+        "2023": {
+          "assigned": 25350,
+          "blank": 6,
+          "unassigned": 1
+        },
+        "2024": {
+          "assigned": 34009,
+          "blank": 3
+        },
+        "2025": {
+          "assigned": 43243,
+          "blank": 14,
+          "unassigned": 6
+        },
+        "2026": {
+          "assigned": 8583,
+          "blank": 1
+        }
+      },
+      "metadata_lineage_top": [
+        {
+          "value": "6B.1A.5a.2a.1",
+          "n": 60962,
+          "assigned": 60957,
+          "unassigned": 0,
+          "blank": 5,
+          "not_assigned_rate": 8.2e-05
+        },
+        {
+          "value": "6B.1A.5a.2a",
+          "n": 59356,
+          "assigned": 59330,
+          "unassigned": 0,
+          "blank": 26,
+          "not_assigned_rate": 0.000438
+        },
+        {
+          "value": "6B.1",
+          "n": 9748,
+          "assigned": 9,
+          "unassigned": 9739,
+          "blank": 0,
+          "not_assigned_rate": 0.999077
+        },
+        {
+          "value": "6B.1A.5a.1",
+          "n": 7006,
+          "assigned": 7003,
+          "unassigned": 0,
+          "blank": 3,
+          "not_assigned_rate": 0.000428
+        },
+        {
+          "value": "6B.1A.5a",
+          "n": 6662,
+          "assigned": 6611,
+          "unassigned": 8,
+          "blank": 43,
+          "not_assigned_rate": 0.007655
+        },
+        {
+          "value": "6B.1A",
+          "n": 4962,
+          "assigned": 0,
+          "unassigned": 4956,
+          "blank": 6,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.1",
+          "n": 3795,
+          "assigned": 0,
+          "unassigned": 3789,
+          "blank": 6,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.5a.2",
+          "n": 3098,
+          "assigned": 3097,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 0.000323
+        },
+        {
+          "value": "6B.1A.5b",
+          "n": 3003,
+          "assigned": 0,
+          "unassigned": 3003,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.7",
+          "n": 1864,
+          "assigned": 0,
+          "unassigned": 1853,
+          "blank": 11,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "1A.3.3.2",
+          "n": 1529,
+          "assigned": 410,
+          "unassigned": 1114,
+          "blank": 5,
+          "not_assigned_rate": 0.731851
+        },
+        {
+          "value": "6B.1A.6",
+          "n": 1261,
+          "assigned": 0,
+          "unassigned": 1254,
+          "blank": 7,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.2",
+          "n": 734,
+          "assigned": 1,
+          "unassigned": 729,
+          "blank": 4,
+          "not_assigned_rate": 0.998638
+        },
+        {
+          "value": "unassigned",
+          "n": 678,
+          "assigned": 577,
+          "unassigned": 97,
+          "blank": 4,
+          "not_assigned_rate": 0.148968
+        },
+        {
+          "value": "unknown",
+          "n": 420,
+          "assigned": 116,
+          "unassigned": 304,
+          "blank": 0,
+          "not_assigned_rate": 0.72381
+        },
+        {
+          "value": "6B.1A.3",
+          "n": 417,
+          "assigned": 0,
+          "unassigned": 417,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "6B.1A.5",
+          "n": 204,
+          "assigned": 4,
+          "unassigned": 196,
+          "blank": 4,
+          "not_assigned_rate": 0.980392
+        },
+        {
+          "value": "clade",
+          "n": 152,
+          "assigned": 124,
+          "unassigned": 28,
+          "blank": 0,
+          "not_assigned_rate": 0.184211
+        },
+        {
+          "value": "6B.2",
+          "n": 36,
+          "assigned": 0,
+          "unassigned": 36,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "pdm",
+          "n": 20,
+          "assigned": 9,
+          "unassigned": 11,
+          "blank": 0,
+          "not_assigned_rate": 0.55
+        }
+      ],
+      "metadata_subtype": {
+        "A_/_H1N1": {
+          "blank": 126,
+          "assigned": 138251,
+          "unassigned": 27534
+        }
+      },
+      "columns": {
+        "count": 92,
+        "assignment": [
+          "clade",
+          "proposedSubclade",
+          "subclade",
+          "short-clade",
+          "legacy-clade"
+        ],
+        "error_or_warning": [
+          "warnings",
+          "errors"
+        ]
+      }
+    },
+    {
+      "file": "clade注释_sorted/H3N2/h3n2_results_CY163680.tsv",
+      "rows": 34435,
+      "unique_seqName": 34435,
+      "duplicate_seqName_rows": 0,
+      "tsv_structure": {
+        "rows_with_extra_columns": 0,
+        "rows_with_missing_columns": 0
+      },
+      "primary_clade": {
+        "assigned": {
+          "n": 17616,
+          "rate": 0.511573
+        },
+        "unassigned": {
+          "n": 16799,
+          "rate": 0.487847
+        },
+        "blank": {
+          "n": 20,
+          "rate": 0.000581
+        }
+      },
+      "rows_with_error_or_warning": {
+        "n": 7896,
+        "rate": 0.229302,
+        "by_primary_status": {
+          "assigned": 1063,
+          "unassigned": 6813,
+          "blank": 20
+        }
+      },
+      "rows_with_errors": {
+        "n": 20,
+        "rate": 0.000581
+      },
+      "rows_with_warnings": {
+        "n": 7876,
+        "rate": 0.228721
+      },
+      "error_categories": {
+        "unknown_nucleotide": 11,
+        "alignment_error": 9
+      },
+      "assignment_fields": {
+        "clade": {
+          "assigned": 17616,
+          "unassigned": 16799,
+          "blank": 20
+        },
+        "proposedSubclade": {
+          "assigned": 17616,
+          "unassigned": 16799,
+          "blank": 20
+        },
+        "subclade": {
+          "assigned": 17616,
+          "unassigned": 16799,
+          "blank": 20
+        },
+        "short-clade": {
+          "assigned": 17650,
+          "unassigned": 16765,
+          "blank": 20
+        },
+        "legacy-clade": {
+          "assigned": 17650,
+          "unassigned": 16765,
+          "blank": 20
+        }
+      },
+      "assignment_value_top": {
+        "clade": {
+          "assigned": [
+            [
+              "C.1",
+              4419
+            ],
+            [
+              "A.3",
+              3370
+            ],
+            [
+              "A",
+              2770
+            ],
+            [
+              "B",
+              2524
+            ],
+            [
+              "C",
+              1809
+            ],
+            [
+              "A.3.2",
+              1269
+            ],
+            [
+              "A.2",
+              816
+            ],
+            [
+              "B.4",
+              432
+            ],
+            [
+              "B.2",
+              170
+            ],
+            [
+              "B.3",
+              29
+            ],
+            [
+              "B.1.1",
+              5
+            ],
+            [
+              "E.1",
+              2
+            ],
+            [
+              "J.1",
+              1
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              16799
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              20
+            ]
+          ]
+        },
+        "proposedSubclade": {
+          "assigned": [
+            [
+              "C.1",
+              4419
+            ],
+            [
+              "A.3",
+              3370
+            ],
+            [
+              "A",
+              2770
+            ],
+            [
+              "B",
+              2524
+            ],
+            [
+              "C",
+              1809
+            ],
+            [
+              "A.3.2",
+              1269
+            ],
+            [
+              "A.2",
+              816
+            ],
+            [
+              "B.4",
+              432
+            ],
+            [
+              "B.2",
+              170
+            ],
+            [
+              "B.3",
+              29
+            ],
+            [
+              "B.1.1",
+              5
+            ],
+            [
+              "E.1",
+              2
+            ],
+            [
+              "J.1",
+              1
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              16799
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              20
+            ]
+          ]
+        },
+        "subclade": {
+          "assigned": [
+            [
+              "C.1",
+              4419
+            ],
+            [
+              "A.3",
+              3370
+            ],
+            [
+              "A",
+              2770
+            ],
+            [
+              "B",
+              2524
+            ],
+            [
+              "C",
+              1809
+            ],
+            [
+              "A.3.2",
+              1269
+            ],
+            [
+              "A.2",
+              816
+            ],
+            [
+              "B.4",
+              432
+            ],
+            [
+              "B.2",
+              170
+            ],
+            [
+              "B.3",
+              29
+            ],
+            [
+              "B.1.1",
+              5
+            ],
+            [
+              "E.1",
+              2
+            ],
+            [
+              "J.1",
+              1
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              16799
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              20
+            ]
+          ]
+        },
+        "short-clade": {
+          "assigned": [
+            [
+              "3C.3a1",
+              4419
+            ],
+            [
+              "3C.3",
+              3370
+            ],
+            [
+              "3C",
+              2770
+            ],
+            [
+              "3C.2a",
+              2524
+            ],
+            [
+              "3C.3a",
+              1809
+            ],
+            [
+              "3C.3b",
+              1269
+            ],
+            [
+              "3C.2",
+              816
+            ],
+            [
+              "3C.2a4",
+              432
+            ],
+            [
+              "3C.2a2",
+              170
+            ],
+            [
+              "3C.2a3",
+              29
+            ],
+            [
+              "3C.2a1a",
+              5
+            ],
+            [
+              "3C.2a1b.2a",
+              2
+            ],
+            [
+              "2a.3a.1",
+              1
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              16765
+            ],
+            [
+              "3B",
+              34
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              20
+            ]
+          ]
+        },
+        "legacy-clade": {
+          "assigned": [
+            [
+              "3C.3a1",
+              4419
+            ],
+            [
+              "3C.3",
+              3370
+            ],
+            [
+              "3C",
+              2770
+            ],
+            [
+              "3C.2a",
+              2524
+            ],
+            [
+              "3C.3a",
+              1809
+            ],
+            [
+              "3C.3b",
+              1269
+            ],
+            [
+              "3C.2",
+              816
+            ],
+            [
+              "3C.2a4",
+              432
+            ],
+            [
+              "3C.2a2",
+              170
+            ],
+            [
+              "3C.2a3",
+              29
+            ],
+            [
+              "3C.2a1a",
+              5
+            ],
+            [
+              "3C.2a1b.2a",
+              2
+            ],
+            [
+              "3C.2a1b.2a.2a.3a.1",
+              1
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              16765
+            ],
+            [
+              "3B",
+              34
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              20
+            ]
+          ]
+        }
+      },
+      "qc_by_primary_status": {
+        "bad": {
+          "assigned": 50,
+          "unassigned": 561
+        },
+        "blank": {
+          "blank": 20
+        },
+        "good": {
+          "unassigned": 15283,
+          "assigned": 17386
+        },
+        "mediocre": {
+          "unassigned": 955,
+          "assigned": 180
+        }
+      },
+      "metrics_by_primary_status": {
+        "assigned": {
+          "qc.overallScore": {
+            "n": 17616,
+            "median": 0.0,
+            "mean": 2.393831
+          },
+          "coverage": {
+            "n": 17616,
+            "median": 0.998849,
+            "mean": 0.959655
+          },
+          "totalMissing": {
+            "n": 17616,
+            "median": 0.0,
+            "mean": 0.248865
+          },
+          "totalNonACGTNs": {
+            "n": 17616,
+            "median": 0.0,
+            "mean": 0.082425
+          },
+          "totalFrameShifts": {
+            "n": 17616,
+            "median": 0.0,
+            "mean": 0.002782
+          },
+          "totalUnknownAa": {
+            "n": 17616,
+            "median": 0.0,
+            "mean": 0.350534
+          },
+          "alignmentStart": {
+            "n": 17616,
+            "median": 1.0,
+            "mean": 12.224455
+          },
+          "alignmentEnd": {
+            "n": 17616,
+            "median": 1737.0,
+            "mean": 1678.476215
+          }
+        },
+        "unassigned": {
+          "qc.overallScore": {
+            "n": 16799,
+            "median": 0.444444,
+            "mean": 82.004985
+          },
+          "coverage": {
+            "n": 16799,
+            "median": 0.976972,
+            "mean": 0.794259
+          },
+          "totalMissing": {
+            "n": 16799,
+            "median": 0.0,
+            "mean": 0.138282
+          },
+          "totalNonACGTNs": {
+            "n": 16799,
+            "median": 0.0,
+            "mean": 0.101732
+          },
+          "totalFrameShifts": {
+            "n": 16799,
+            "median": 0.0,
+            "mean": 0.015179
+          },
+          "totalUnknownAa": {
+            "n": 16799,
+            "median": 0.0,
+            "mean": 2.236324
+          },
+          "alignmentStart": {
+            "n": 16799,
+            "median": 18.0,
+            "mean": 43.638609
+          },
+          "alignmentEnd": {
+            "n": 16799,
+            "median": 1715.0,
+            "mean": 1422.507054
+          }
+        },
+        "blank": {}
+      },
+      "year_by_primary_status": {
+        "1968": {
+          "unassigned": 40
+        },
+        "1969": {
+          "unassigned": 4
+        },
+        "1970": {
+          "unassigned": 3
+        },
+        "1971": {
+          "unassigned": 6
+        },
+        "1972": {
+          "unassigned": 13
+        },
+        "1973": {
+          "unassigned": 8
+        },
+        "1974": {
+          "unassigned": 5
+        },
+        "1975": {
+          "unassigned": 9
+        },
+        "1976": {
+          "unassigned": 14
+        },
+        "1977": {
+          "unassigned": 7
+        },
+        "1978": {
+          "unassigned": 3
+        },
+        "1979": {
+          "unassigned": 8
+        },
+        "1980": {
+          "unassigned": 13
+        },
+        "1981": {
+          "unassigned": 14
+        },
+        "1982": {
+          "unassigned": 29
+        },
+        "1983": {
+          "unassigned": 34
+        },
+        "1984": {
+          "unassigned": 29
+        },
+        "1985": {
+          "unassigned": 29
+        },
+        "1986": {
+          "unassigned": 6
+        },
+        "1987": {
+          "unassigned": 38
+        },
+        "1988": {
+          "unassigned": 15
+        },
+        "1989": {
+          "unassigned": 63
+        },
+        "1990": {
+          "unassigned": 37
+        },
+        "1991": {
+          "unassigned": 40
+        },
+        "1992": {
+          "unassigned": 71
+        },
+        "1993": {
+          "unassigned": 54
+        },
+        "1994": {
+          "unassigned": 31
+        },
+        "1995": {
+          "unassigned": 64
+        },
+        "1996": {
+          "unassigned": 151
+        },
+        "1997": {
+          "unassigned": 93
+        },
+        "1998": {
+          "unassigned": 162
+        },
+        "1999": {
+          "unassigned": 227
+        },
+        "2000": {
+          "unassigned": 206
+        },
+        "2001": {
+          "unassigned": 260
+        },
+        "2002": {
+          "unassigned": 536
+        },
+        "2003": {
+          "unassigned": 846
+        },
+        "2004": {
+          "unassigned": 646
+        },
+        "2005": {
+          "unassigned": 769
+        },
+        "2006": {
+          "unassigned": 776
+        },
+        "2007": {
+          "unassigned": 1363,
+          "blank": 5
+        },
+        "2008": {
+          "unassigned": 1097,
+          "assigned": 2
+        },
+        "2009": {
+          "unassigned": 2101,
+          "blank": 4,
+          "assigned": 3
+        },
+        "2010": {
+          "unassigned": 2064,
+          "assigned": 6
+        },
+        "2011": {
+          "unassigned": 2134,
+          "assigned": 486,
+          "blank": 1
+        },
+        "2012": {
+          "assigned": 1953,
+          "unassigned": 2198,
+          "blank": 2
+        },
+        "2013": {
+          "assigned": 2956,
+          "unassigned": 155,
+          "blank": 1
+        },
+        "2014": {
+          "assigned": 2490,
+          "unassigned": 31
+        },
+        "2015": {
+          "assigned": 2614,
+          "unassigned": 33
+        },
+        "2016": {
+          "assigned": 1475,
+          "unassigned": 31
+        },
+        "2017": {
+          "assigned": 940,
+          "unassigned": 63
+        },
+        "2018": {
+          "assigned": 693,
+          "blank": 1,
+          "unassigned": 8
+        },
+        "2019": {
+          "assigned": 3539,
+          "blank": 4,
+          "unassigned": 1
+        },
+        "2020": {
+          "assigned": 454,
+          "unassigned": 4,
+          "blank": 2
+        },
+        "2021": {
+          "assigned": 2,
+          "unassigned": 9
+        },
+        "2022": {
+          "unassigned": 13
+        },
+        "2023": {
+          "assigned": 2,
+          "unassigned": 28
+        },
+        "2024": {
+          "unassigned": 45
+        },
+        "2025": {
+          "unassigned": 61,
+          "assigned": 1
+        },
+        "2026": {
+          "unassigned": 1
+        }
+      },
+      "metadata_lineage_top": [
+        {
+          "value": "unassigned",
+          "n": 15194,
+          "assigned": 118,
+          "unassigned": 15065,
+          "blank": 11,
+          "not_assigned_rate": 0.992234
+        },
+        {
+          "value": "3C.3",
+          "n": 3389,
+          "assigned": 3384,
+          "unassigned": 5,
+          "blank": 0,
+          "not_assigned_rate": 0.001475
+        },
+        {
+          "value": "3C.3a1",
+          "n": 2341,
+          "assigned": 2340,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 0.000427
+        },
+        {
+          "value": "3C",
+          "n": 2312,
+          "assigned": 2301,
+          "unassigned": 10,
+          "blank": 1,
+          "not_assigned_rate": 0.004758
+        },
+        {
+          "value": "Other-Human-2010",
+          "n": 2033,
+          "assigned": 2027,
+          "unassigned": 0,
+          "blank": 6,
+          "not_assigned_rate": 0.002951
+        },
+        {
+          "value": "3C.2",
+          "n": 2008,
+          "assigned": 2002,
+          "unassigned": 5,
+          "blank": 1,
+          "not_assigned_rate": 0.002988
+        },
+        {
+          "value": "3C.3a",
+          "n": 1826,
+          "assigned": 1826,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a",
+          "n": 1746,
+          "assigned": 1738,
+          "unassigned": 8,
+          "blank": 0,
+          "not_assigned_rate": 0.004582
+        },
+        {
+          "value": "3C.3b",
+          "n": 1232,
+          "assigned": 1232,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a4",
+          "n": 469,
+          "assigned": 432,
+          "unassigned": 37,
+          "blank": 0,
+          "not_assigned_rate": 0.078891
+        },
+        {
+          "value": "Other-Human-1990",
+          "n": 370,
+          "assigned": 0,
+          "unassigned": 370,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "Other-Human-2000",
+          "n": 302,
+          "assigned": 0,
+          "unassigned": 302,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "Other-Human-2000-like",
+          "n": 258,
+          "assigned": 0,
+          "unassigned": 258,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "1990.4.a",
+          "n": 217,
+          "assigned": 0,
+          "unassigned": 217,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "3C.2a2",
+          "n": 169,
+          "assigned": 169,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a3",
+          "n": 163,
+          "assigned": 26,
+          "unassigned": 137,
+          "blank": 0,
+          "not_assigned_rate": 0.840491
+        },
+        {
+          "value": "Other-Human-1980-like",
+          "n": 105,
+          "assigned": 0,
+          "unassigned": 105,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "2010.1",
+          "n": 87,
+          "assigned": 0,
+          "unassigned": 87,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "Other-Human-1980",
+          "n": 69,
+          "assigned": 0,
+          "unassigned": 69,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        },
+        {
+          "value": "Other-Human-1990-like",
+          "n": 48,
+          "assigned": 0,
+          "unassigned": 48,
+          "blank": 0,
+          "not_assigned_rate": 1.0
+        }
+      ],
+      "metadata_subtype": {
+        "A / H3N2": {
+          "unassigned": 16799,
+          "assigned": 17616,
+          "blank": 20
+        }
+      },
+      "columns": {
+        "count": 92,
+        "assignment": [
+          "clade",
+          "proposedSubclade",
+          "subclade",
+          "short-clade",
+          "legacy-clade"
+        ],
+        "error_or_warning": [
+          "warnings",
+          "errors"
+        ]
+      }
+    },
+    {
+      "file": "clade注释_sorted/H3N2/h3n2_results_EPI1857216.tsv",
+      "rows": 237117,
+      "unique_seqName": 237117,
+      "duplicate_seqName_rows": 0,
+      "tsv_structure": {
+        "rows_with_extra_columns": 0,
+        "rows_with_missing_columns": 0
+      },
+      "primary_clade": {
+        "assigned": {
+          "n": 236929,
+          "rate": 0.999207
+        },
+        "unassigned": {
+          "n": 8,
+          "rate": 3.4e-05
+        },
+        "blank": {
+          "n": 180,
+          "rate": 0.000759
+        }
+      },
+      "rows_with_error_or_warning": {
+        "n": 9135,
+        "rate": 0.038525,
+        "by_primary_status": {
+          "assigned": 8949,
+          "unassigned": 6,
+          "blank": 180
+        }
+      },
+      "rows_with_errors": {
+        "n": 180,
+        "rate": 0.000759
+      },
+      "rows_with_warnings": {
+        "n": 8955,
+        "rate": 0.037766
+      },
+      "error_categories": {
+        "unknown_nucleotide": 178,
+        "alignment_error": 2
+      },
+      "assignment_fields": {
+        "clade": {
+          "assigned": 236929,
+          "unassigned": 8,
+          "blank": 180
+        },
+        "proposedSubclade": {
+          "assigned": 236929,
+          "unassigned": 8,
+          "blank": 180
+        },
+        "subclade": {
+          "assigned": 236929,
+          "unassigned": 8,
+          "blank": 180
+        },
+        "short-clade": {
+          "assigned": 236929,
+          "unassigned": 8,
+          "blank": 180
+        },
+        "legacy-clade": {
+          "assigned": 236929,
+          "unassigned": 8,
+          "blank": 180
+        }
+      },
+      "assignment_value_top": {
+        "clade": {
+          "assigned": [
+            [
+              "K",
+              45380
+            ],
+            [
+              "J.2",
+              40154
+            ],
+            [
+              "G.1.1",
+              12806
+            ],
+            [
+              "B.2",
+              12258
+            ],
+            [
+              "B",
+              12107
+            ],
+            [
+              "G.2",
+              9130
+            ],
+            [
+              "J.2.2",
+              8391
+            ],
+            [
+              "B.1",
+              8036
+            ],
+            [
+              "G.1.3",
+              6531
+            ],
+            [
+              "G.1.1.1",
+              6349
+            ],
+            [
+              "B.1.2.1",
+              6041
+            ],
+            [
+              "J",
+              5912
+            ],
+            [
+              "G.1.1.2",
+              5032
+            ],
+            [
+              "C.1",
+              4553
+            ],
+            [
+              "B.3",
+              4288
+            ],
+            [
+              "E.2",
+              3797
+            ],
+            [
+              "G.2.2",
+              3764
+            ],
+            [
+              "E",
+              3706
+            ],
+            [
+              "J.1",
+              3678
+            ],
+            [
+              "J.2.3",
+              3344
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              8
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              180
+            ]
+          ]
+        },
+        "proposedSubclade": {
+          "assigned": [
+            [
+              "K",
+              45380
+            ],
+            [
+              "J.2",
+              40154
+            ],
+            [
+              "G.1.1",
+              12806
+            ],
+            [
+              "B.2",
+              12258
+            ],
+            [
+              "B",
+              12107
+            ],
+            [
+              "G.2",
+              9130
+            ],
+            [
+              "J.2.2",
+              8391
+            ],
+            [
+              "B.1",
+              8036
+            ],
+            [
+              "G.1.3",
+              6531
+            ],
+            [
+              "G.1.1.1",
+              6349
+            ],
+            [
+              "B.1.2.1",
+              6041
+            ],
+            [
+              "J",
+              5912
+            ],
+            [
+              "G.1.1.2",
+              5032
+            ],
+            [
+              "C.1",
+              4553
+            ],
+            [
+              "B.3",
+              4288
+            ],
+            [
+              "E.2",
+              3797
+            ],
+            [
+              "G.2.2",
+              3764
+            ],
+            [
+              "E",
+              3706
+            ],
+            [
+              "J.1",
+              3678
+            ],
+            [
+              "J.2.3",
+              3344
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              8
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              180
+            ]
+          ]
+        },
+        "subclade": {
+          "assigned": [
+            [
+              "K",
+              45380
+            ],
+            [
+              "J.2",
+              40154
+            ],
+            [
+              "G.1.1",
+              12806
+            ],
+            [
+              "B.2",
+              12258
+            ],
+            [
+              "B",
+              12107
+            ],
+            [
+              "G.2",
+              9130
+            ],
+            [
+              "J.2.2",
+              8391
+            ],
+            [
+              "B.1",
+              8036
+            ],
+            [
+              "G.1.3",
+              6531
+            ],
+            [
+              "G.1.1.1",
+              6349
+            ],
+            [
+              "B.1.2.1",
+              6041
+            ],
+            [
+              "J",
+              5912
+            ],
+            [
+              "G.1.1.2",
+              5032
+            ],
+            [
+              "C.1",
+              4553
+            ],
+            [
+              "B.3",
+              4288
+            ],
+            [
+              "E.2",
+              3797
+            ],
+            [
+              "G.2.2",
+              3764
+            ],
+            [
+              "E",
+              3706
+            ],
+            [
+              "J.1",
+              3678
+            ],
+            [
+              "J.2.3",
+              3344
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              8
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              180
+            ]
+          ]
+        },
+        "short-clade": {
+          "assigned": [
+            [
+              "2a.3a.1",
+              117072
+            ],
+            [
+              "2b",
+              15563
+            ],
+            [
+              "2a.1",
+              12806
+            ],
+            [
+              "3C.2a2",
+              12258
+            ],
+            [
+              "3C.2a",
+              12107
+            ],
+            [
+              "3C.2a1",
+              8036
+            ],
+            [
+              "2a.3",
+              6531
+            ],
+            [
+              "2a.1a",
+              6349
+            ],
+            [
+              "3C.2a1b.1",
+              6041
+            ],
+            [
+              "2a.1b",
+              5032
+            ],
+            [
+              "3C.3a1",
+              4553
+            ],
+            [
+              "3C.2a3",
+              4288
+            ],
+            [
+              "3C.2a1b.2b",
+              3797
+            ],
+            [
+              "3C.2a1b.2",
+              3706
+            ],
+            [
+              "3C.2a1b.1b",
+              2252
+            ],
+            [
+              "3C.2a1a",
+              1939
+            ],
+            [
+              "3C.3a",
+              1603
+            ],
+            [
+              "2a",
+              1566
+            ],
+            [
+              "3C.3",
+              1477
+            ],
+            [
+              "2a.3a",
+              1459
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              8
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              180
+            ]
+          ]
+        },
+        "legacy-clade": {
+          "assigned": [
+            [
+              "3C.2a1b.2a.2a.3a.1",
+              117072
+            ],
+            [
+              "3C.2a1b.2a.2b",
+              15563
+            ],
+            [
+              "3C.2a1b.2a.2a.1",
+              12806
+            ],
+            [
+              "3C.2a2",
+              12258
+            ],
+            [
+              "3C.2a",
+              12107
+            ],
+            [
+              "3C.2a1",
+              8036
+            ],
+            [
+              "3C.2a1b.2a.2a.3",
+              6531
+            ],
+            [
+              "3C.2a1b.2a.2a.1a",
+              6349
+            ],
+            [
+              "3C.2a1b.1",
+              6041
+            ],
+            [
+              "3C.2a1b.2a.2a.1b",
+              5032
+            ],
+            [
+              "3C.3a1",
+              4553
+            ],
+            [
+              "3C.2a3",
+              4288
+            ],
+            [
+              "3C.2a1b.2b",
+              3797
+            ],
+            [
+              "3C.2a1b.2",
+              3706
+            ],
+            [
+              "3C.2a1b.1b",
+              2252
+            ],
+            [
+              "3C.2a1a",
+              1939
+            ],
+            [
+              "3C.3a",
+              1603
+            ],
+            [
+              "3C.2a1b.2a.2a",
+              1566
+            ],
+            [
+              "3C.3",
+              1477
+            ],
+            [
+              "3C.2a1b.2a.2a.3a",
+              1459
+            ]
+          ],
+          "unassigned": [
+            [
+              "unassigned",
+              8
+            ]
+          ],
+          "blank": [
+            [
+              "<blank>",
+              180
+            ]
+          ]
+        }
+      },
+      "qc_by_primary_status": {
+        "bad": {
+          "assigned": 793,
+          "unassigned": 2
+        },
+        "blank": {
+          "blank": 180
+        },
+        "good": {
+          "assigned": 234910,
+          "unassigned": 6
+        },
+        "mediocre": {
+          "assigned": 1226
+        }
+      },
+      "metrics_by_primary_status": {
+        "assigned": {
+          "qc.overallScore": {
+            "n": 236929,
+            "median": 0.0,
+            "mean": 3.414727
+          },
+          "coverage": {
+            "n": 236929,
+            "median": 0.990105,
+            "mean": 0.983607
+          },
+          "totalMissing": {
+            "n": 236929,
+            "median": 0.0,
+            "mean": 1.208864
+          },
+          "totalNonACGTNs": {
+            "n": 236929,
+            "median": 0.0,
+            "mean": 0.088664
+          },
+          "totalFrameShifts": {
+            "n": 236929,
+            "median": 0.0,
+            "mean": 0.004592
+          },
+          "totalUnknownAa": {
+            "n": 236929,
+            "median": 0.0,
+            "mean": 0.819423
+          },
+          "alignmentStart": {
+            "n": 236929,
+            "median": 1.0,
+            "mean": 4.207193
+          },
+          "alignmentEnd": {
+            "n": 236929,
+            "median": 1701.0,
+            "mean": 1694.34133
+          }
+        },
+        "unassigned": {
+          "qc.overallScore": {
+            "n": 8,
+            "median": 0.0,
+            "mean": 261.388889
+          },
+          "coverage": {
+            "n": 8,
+            "median": 0.467404,
+            "mean": 0.523865
+          },
+          "totalMissing": {
+            "n": 8,
+            "median": 0.0,
+            "mean": 0.0
+          },
+          "totalNonACGTNs": {
+            "n": 8,
+            "median": 0.0,
+            "mean": 0.0
+          },
+          "totalFrameShifts": {
+            "n": 8,
+            "median": 0.0,
+            "mean": 0.0
+          },
+          "totalUnknownAa": {
+            "n": 8,
+            "median": 0.0,
+            "mean": 0.25
+          },
+          "alignmentStart": {
+            "n": 8,
+            "median": 198.0,
+            "mean": 286.75
+          },
+          "alignmentEnd": {
+            "n": 8,
+            "median": 1053.0,
+            "mean": 1185.75
+          }
+        },
+        "blank": {}
+      },
+      "year_by_primary_status": {
+        "1905": {
+          "assigned": 6
+        },
+        "1967": {
+          "assigned": 1
+        },
+        "1968": {
+          "blank": 1
+        },
+        "1971": {
+          "blank": 1
+        },
+        "1974": {
+          "unassigned": 2
+        },
+        "2002": {
+          "assigned": 1
+        },
+        "2005": {
+          "assigned": 2
+        },
+        "2006": {
+          "assigned": 1
+        },
+        "2011": {
+          "unassigned": 2,
+          "assigned": 2
+        },
+        "2012": {
+          "assigned": 144,
+          "unassigned": 2
+        },
+        "2013": {
+          "assigned": 662
+        },
+        "2014": {
+          "assigned": 3910
+        },
+        "2015": {
+          "assigned": 6079,
+          "blank": 1
+        },
+        "2016": {
+          "assigned": 8251,
+          "blank": 3
+        },
+        "2017": {
+          "assigned": 17665,
+          "blank": 14
+        },
+        "2018": {
+          "assigned": 11252,
+          "blank": 8
+        },
+        "2019": {
+          "assigned": 14979,
+          "blank": 80
+        },
+        "2020": {
+          "assigned": 2691,
+          "blank": 8
+        },
+        "2021": {
+          "assigned": 8343,
+          "blank": 5
+        },
+        "2022": {
+          "assigned": 42667,
+          "blank": 3,
+          "unassigned": 1
+        },
+        "2023": {
+          "assigned": 17046,
+          "blank": 23,
+          "unassigned": 1
+        },
+        "2024": {
+          "assigned": 28436,
+          "blank": 26
+        },
+        "2025": {
+          "assigned": 51880,
+          "blank": 7
+        },
+        "2026": {
+          "assigned": 22911
+        }
+      },
+      "metadata_lineage_top": [
+        {
+          "value": "3C.2a1b.2a.2a.3a.1",
+          "n": 68655,
+          "assigned": 68604,
+          "unassigned": 0,
+          "blank": 51,
+          "not_assigned_rate": 0.000743
+        },
+        {
+          "value": "3C.2a1b.2a.2a.3a.1 / K",
+          "n": 47438,
+          "assigned": 47435,
+          "unassigned": 0,
+          "blank": 3,
+          "not_assigned_rate": 6.3e-05
+        },
+        {
+          "value": "3C.2a1b.2a.2b",
+          "n": 15497,
+          "assigned": 15496,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 6.5e-05
+        },
+        {
+          "value": "3C.2a1b.2a.2a.1",
+          "n": 12724,
+          "assigned": 12723,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 7.9e-05
+        },
+        {
+          "value": "3C.2a2",
+          "n": 12240,
+          "assigned": 12239,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 8.2e-05
+        },
+        {
+          "value": "3C.2a1",
+          "n": 9712,
+          "assigned": 9706,
+          "unassigned": 0,
+          "blank": 6,
+          "not_assigned_rate": 0.000618
+        },
+        {
+          "value": "3C.2a",
+          "n": 9320,
+          "assigned": 9313,
+          "unassigned": 1,
+          "blank": 6,
+          "not_assigned_rate": 0.000751
+        },
+        {
+          "value": "3C.2a1b.2a.2a.3",
+          "n": 6630,
+          "assigned": 6630,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a1b.1",
+          "n": 6419,
+          "assigned": 6379,
+          "unassigned": 0,
+          "blank": 40,
+          "not_assigned_rate": 0.006232
+        },
+        {
+          "value": "3C.2a1b.2a.2a.1a",
+          "n": 6165,
+          "assigned": 6165,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a1b.2a.2a.1b",
+          "n": 5136,
+          "assigned": 5136,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a1b.2b",
+          "n": 3788,
+          "assigned": 3787,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 0.000264
+        },
+        {
+          "value": "3C.2a1b.2",
+          "n": 3751,
+          "assigned": 3725,
+          "unassigned": 0,
+          "blank": 26,
+          "not_assigned_rate": 0.006931
+        },
+        {
+          "value": "3C.2a3",
+          "n": 3557,
+          "assigned": 3552,
+          "unassigned": 0,
+          "blank": 5,
+          "not_assigned_rate": 0.001406
+        },
+        {
+          "value": "3C.2",
+          "n": 3030,
+          "assigned": 3030,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.3a1",
+          "n": 2934,
+          "assigned": 2929,
+          "unassigned": 0,
+          "blank": 5,
+          "not_assigned_rate": 0.001704
+        },
+        {
+          "value": "3C.2a1b.1b",
+          "n": 2247,
+          "assigned": 2246,
+          "unassigned": 0,
+          "blank": 1,
+          "not_assigned_rate": 0.000445
+        },
+        {
+          "value": "Other-Human-2010",
+          "n": 2175,
+          "assigned": 2171,
+          "unassigned": 0,
+          "blank": 4,
+          "not_assigned_rate": 0.001839
+        },
+        {
+          "value": "3C.3a",
+          "n": 1698,
+          "assigned": 1698,
+          "unassigned": 0,
+          "blank": 0,
+          "not_assigned_rate": 0.0
+        },
+        {
+          "value": "3C.2a1b.2a.2a",
+          "n": 1672,
+          "assigned": 1662,
+          "unassigned": 0,
+          "blank": 10,
+          "not_assigned_rate": 0.005981
+        }
+      ],
+      "metadata_subtype": {
+        "A / H3N2": {
+          "assigned": 236929,
+          "unassigned": 8,
+          "blank": 180
+        }
+      },
+      "columns": {
+        "count": 93,
+        "assignment": [
+          "clade",
+          "proposedSubclade",
+          "subclade",
+          "short-clade",
+          "legacy-clade"
+        ],
+        "error_or_warning": [
+          "warnings",
+          "errors"
+        ]
+      }
+    }
+  ],
+  "same_subtype_run_comparisons": [
+    {
+      "left": "clade注释_sorted/H1N1/h1n1_non_pdm_results.tsv",
+      "right": "clade注释_sorted/H1N1/h1n1_results_CY121680_sorted.tsv",
+      "overlap": 0,
+      "left_only": 576,
+      "right_only": 23823,
+      "transitions": {}
+    },
+    {
+      "left": "clade注释_sorted/H1N1/h1n1_non_pdm_results.tsv",
+      "right": "clade注释_sorted/H1N1/h1n1_results_MW626062_sorted.tsv",
+      "overlap": 0,
+      "left_only": 576,
+      "right_only": 165911,
+      "transitions": {}
+    },
+    {
+      "left": "clade注释_sorted/H1N1/h1n1_results_CY121680_sorted.tsv",
+      "right": "clade注释_sorted/H1N1/h1n1_results_MW626062_sorted.tsv",
+      "overlap": 0,
+      "left_only": 23823,
+      "right_only": 165911,
+      "transitions": {}
+    },
+    {
+      "left": "clade注释_sorted/H3N2/h3n2_results_CY163680.tsv",
+      "right": "clade注释_sorted/H3N2/h3n2_results_EPI1857216.tsv",
+      "overlap": 0,
+      "left_only": 34435,
+      "right_only": 237117,
+      "transitions": {}
+    }
+  ]
+}

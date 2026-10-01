@@ -1,0 +1,3 @@
+*.fasta
+/clade注释_sorted/
+.DS_Store

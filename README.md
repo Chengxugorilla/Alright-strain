@@ -145,6 +145,61 @@ nextclade run \
 
 该 TSV 文件可使用 Excel、R、Python 或其他表格分析工具打开，进行后续筛选和统计。
 
+## Benchmark 模型与方法
+
+为全面评估深度学习模型的预测能力，benchmark 同时纳入学习型/进化预测方法（A 组）和传统 baseline（B 组）。A 组用于比较不同建模范式的预测能力，B 组用于检验模型是否真正优于简单外推和成熟的传统频率预测方法。
+
+| 编号 | 工具/方法 | 定位 | 为什么值得 benchmark | 建模简单原理 | 输入 → 输出；是否适合本任务 |
+|---|---|---|---|---|---|
+| **A1** | **Previr / Łuksza–Lässig framework** | 综合病毒进化预测 | 最权威，专门做 viral evolution prediction；覆盖 H3N2、H1N1pdm09、B/Vic、SARS-CoV-2，并提供持续更新的 clade fitness / frequency prediction。([PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC11092427/)) | 基于 timed strain tree 追踪 clade frequency、clade fitness、allele trajectory，再结合序列、流行病学、抗原/中和数据预测未来 clade frequency。([Previr](https://www.previr.org/science)) | 输入：序列、时间、地区、clade、抗原/中和/流行病学数据；输出：clade fitness + 未来 clade frequency。**非常适合，但复现成本最高。** |
+| **A2** | **CovTransformer** | 深度学习直接预测 | 任务形式最贴合：直接预测 lineage frequency curve；论文称其在 SARS-CoV-2 lineage frequency forecasting 中优于 Nextstrain MLR。([OUP Academic](https://academic.oup.com/ve/article/10/1/veae086/7890856)) | 用 Transformer 从 noisy lineage frequency time series 中学习未来频率轨迹。 | 输入：过去若干 bin 的 lineage/subclade frequency；输出：未来 frequency curve。**形式很适合，但不是 influenza-specific，需要迁移到 H1。** |
+| **A3** | **Site-based mutation dynamics / beth-1** | 位点级进化预测 | Nature Communications 2024，专门面向 influenza evolution；用 genome-wide mutation frequency dynamics 做未来病毒群体预测。([Nature](https://www.nature.com/articles/s41467-024-46918-0)) | 先预测各位点突变频率/fitness landscape，再据此推断未来更接近病毒群体的候选株或优势变异。 | 输入：多时点 HA/NA 或全基因组序列、突变频率、免疫/血清信息；输出：未来优势突变、fitness landscape、候选代表株。**适合作辅助 benchmark，但不天然输出完整 subclade proportion curve。** |
+| **B0** | **Current frequency / persistence** | naive lower bound | 检验模型是否真的超过“当前比例不变”。 | 将预测截断点的当前频率直接复制到所有未来时间点。 | 输入：截断点的 region × bin × subclade counts/frequency；输出：未来各 bin 的 subclade frequency。**完全适合，作为最低基线。** |
+| **B1** | **Nextstrain forecasts-flu MLR** | 主 baseline | 官方 Nextstrain 生态中的成熟 frequency forecast 方法。 | 通过多元线性回归整合频率趋势与 fitness predictors，外推未来 clade frequency。 | 输入：历史 clade frequency 及相关 predictors；输出：未来 clade frequency。**适合作为主要传统 baseline。** |
+| **B2** | **RelRe renewal-equation** | H1-specific 传统对照 | 已有 H1N1pdm09 clade frequency 预测应用，提供机制型对照。 | 使用 renewal equation 和变异株相对繁殖优势描述频率随时间的变化。 | 输入：变异株/亚群的时间序列 counts；输出：相对传播优势及未来 frequency。**适合 H1 任务的机制型对照。** |
+
+### 传统 baseline 的构建与运行
+
+#### B0：Current frequency / persistence
+
+B0 无需单独部署，在数据处理脚本中实现即可。按 `region × bin × subclade` 聚合 counts，计算截断点 `T` 的当前频率，并直接复制到未来 `T+1...T+D` 作为预测，用作最低 naive baseline。
+
+#### B1：Nextstrain forecasts-flu MLR
+
+本地运行 Nextstrain 官方工具：
+
+```bash
+git clone https://github.com/nextstrain/forecasts-flu.git
+cd forecasts-flu
+
+docker login ghcr.io
+docker pull ghcr.io/blab/flu-mlr-fitness:latest
+
+nextstrain build --docker \
+  --image=ghcr.io/blab/flu-mlr-fitness:latest .
+```
+
+#### B2：RelRe renewal-equation
+
+本地部署 RelRe：
+
+```bash
+git clone https://github.com/KimihitoIto/RelRe
+cd RelRe
+
+julia install_packages.jl
+```
+
+运行示例：
+
+```bash
+julia --threads 10 RelRe.jl \
+  -i counts.csv \
+  -b baseline_variant \
+  -c -q \
+  -f 90
+```
+
 ## 常见检查项
 
 - 下载前确认亚型为 H3N2、宿主为 Human、片段为 HA。
