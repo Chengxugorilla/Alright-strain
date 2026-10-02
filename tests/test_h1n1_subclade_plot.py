@@ -2,11 +2,18 @@ import pandas as pd
 import pytest
 
 from src.h1n1_benchmarks import (
+    build_window_aligned_counts,
+    counts_to_frequencies,
     evaluate_frequency_forecast,
     forecast_b0_persistence,
     forecast_b1_frequency_trend,
     forecast_b2_renewal_selection,
+    forecast_count_b0_persistence,
+    forecast_count_b1_trend,
+    forecast_count_b2_renewal,
     run_benchmark_backtest,
+    run_six_model_backtest,
+    run_rolling_six_model_backtest,
 )
 
 from src.h1n1_subclade_plot import (
@@ -181,3 +188,101 @@ def test_benchmark_backtest_returns_all_models(frequency_history):
     assert set(predictions) == {"B0", "B1", "B2"}
     assert len(actual) == 2
     assert set(metrics.columns) == {"MAE", "RMSE", "mean_TVD", "mean_JSD"}
+
+
+@pytest.fixture
+def count_history(frequency_history):
+    totals = pd.Series([20, 40, 30, 80, 50, 100, 120, 90], index=frequency_history.index)
+    return frequency_history.mul(totals, axis=0)
+
+
+def test_count_b0_normalizes_to_frequency_b0(count_history):
+    future = pd.date_range("2023-04-23", periods=3, freq="14D", name="bin_start")
+    count_prediction = forecast_count_b0_persistence(count_history, future)
+    frequency_prediction = forecast_b0_persistence(
+        counts_to_frequencies(count_history), future
+    )
+
+    pd.testing.assert_frame_equal(
+        counts_to_frequencies(count_prediction), frequency_prediction
+    )
+
+
+@pytest.mark.parametrize(
+    "forecaster", [forecast_count_b1_trend, forecast_count_b2_renewal]
+)
+def test_count_models_predict_nonnegative_counts_and_growing_share(
+    count_history, forecaster
+):
+    future = pd.date_range("2023-04-23", periods=3, freq="14D", name="bin_start")
+    predicted_counts = forecaster(count_history, future, lookback_bins=6)
+    predicted_frequency = counts_to_frequencies(predicted_counts)
+
+    assert (predicted_counts >= 0).all().all()
+    assert predicted_frequency.sum(axis=1).tolist() == pytest.approx([1.0] * 3)
+    assert predicted_frequency["B"].iloc[-1] > predicted_frequency["B"].iloc[0]
+
+
+def test_six_model_backtest_returns_two_by_three_models(count_history):
+    frequency_predictions, count_predictions, actual_counts, actual_frequency, metrics = (
+        run_six_model_backtest(
+            count_history,
+            cutoff="2023-03-12",
+            horizon_bins=2,
+            lookback_bins=4,
+        )
+    )
+
+    assert set(frequency_predictions) == {
+        "F-B0", "F-B1", "F-B2", "C-B0", "C-B1", "C-B2"
+    }
+    assert set(count_predictions) == {"C-B0", "C-B1", "C-B2"}
+    assert len(actual_counts) == len(actual_frequency) == 2
+    assert len(metrics) == 6
+    assert set(metrics["training_input"]) == {"frequency", "counts"}
+
+
+def test_window_aligned_counts_keep_only_complete_holdout_bins():
+    dates = pd.date_range("2019-01-01", "2020-09-30", freq="D")
+    frame = pd.DataFrame(
+        {
+            "collection_date": dates,
+            "prediction_branch": ["A" if day.day % 2 else "B" for day in dates],
+        }
+    )
+
+    aligned, evaluation_end, horizon_bins = build_window_aligned_counts(
+        frame,
+        window_start="2020-04-01",
+        window_end="2020-09-30",
+        train_start="2019-01-01",
+    )
+
+    assert horizon_bins == 13
+    assert evaluation_end == pd.Timestamp("2020-09-29")
+    assert pd.Timestamp("2020-04-01") in aligned.index
+    assert pd.Timestamp("2020-09-30") not in aligned.index
+    assert aligned.loc[pd.Timestamp("2020-04-01")].sum() == 14
+
+
+def test_rolling_backtest_returns_six_models_per_window():
+    dates = pd.date_range("2017-01-01", "2021-03-31", freq="D")
+    frame = pd.DataFrame(
+        {
+            "collection_date": dates,
+            "prediction_branch": [
+                "A" if position % 5 else "B" for position in range(len(dates))
+            ],
+        }
+    )
+
+    detail, summary = run_rolling_six_model_backtest(
+        frame,
+        windows=[("2020-04-01", "2020-09-30"), ("2020-10-01", "2021-03-31")],
+        lookback_bins=6,
+    )
+
+    assert len(detail) == 2 * 6
+    assert detail.groupby("window_number")["model_id"].nunique().tolist() == [6, 6]
+    assert len(summary) == 6
+    assert summary["windows"].tolist() == [2] * 6
