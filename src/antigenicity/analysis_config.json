@@ -1,0 +1,20 @@
+{
+  "analysis_name": "h1n1_antigenicity_novelty_next_window_backtest",
+  "forecast_design": {
+    "feature_window_days": 183,
+    "target_window_days": 183,
+    "serum_panel_rule": "freeze_at_feature_window_start",
+    "serum_date_condition": "serumDate < feature_window_start",
+    "serum_deduplication_key": ["seq_id_a", "serumPassCat", "serumName"],
+    "query_virus_passage": "<CELL>"
+  },
+  "antigenicity_summary": {
+    "primary_within_virus": "median_predicted_distance_to_frozen_serum_panel",
+    "sensitivity_within_virus": ["mean", "p90", "min", "max"],
+    "primary_within_clade": "median_virus_novelty",
+    "sensitivity_within_clade": ["mean", "max", "p75"]
+  },
+  "outcomes": ["next_window_clade_share", "next_window_share_change", "next_window_top1"],
+  "identity_contract": "fasta_sha256 + sequence_index + sequence_sha256",
+  "note": "The frozen panel prevents use of assays or sera first available during the feature window."
+}
