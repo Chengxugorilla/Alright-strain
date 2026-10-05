@@ -2,6 +2,14 @@
 
 H3N2 流感病毒 HA 序列的下载与 Nextclade clade 批量注释操作指南。
 
+## 项目目录
+
+- `data/raw/`：不可由本项目重建的原始 FASTA 与 Nextclade TSV；分析代码只读取这里的数据。
+- `data/interim/`、`data/processed/`：分别存放可再生成的中间数据与可供模型直接消费的规范化数据。
+- `configs/`：subclade 与 strain 预测实验的参数配置。
+- `outputs/<run_id>/`：一次运行的预测、指标、图和 `manifest.json`；manifest 固化输入哈希和最终参数。
+- `analysis/`：探索性 notebook；可复用逻辑应进入 `src/`，而不是只留在 notebook 中。
+
 ## 工作流程
 
 1. 在 GISAID EpiFlu 中检索并分批下载 H3N2 HA 序列。

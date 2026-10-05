@@ -16,19 +16,24 @@ from pathlib import Path
 
 import pandas as pd
 
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-FLUPROFILER_ROOT = Path("/home/chenyh/workspace/fluProfiler")
+from src.antigenicity.common import (
+    FLUPROFILER_ROOT,
+    PROJECT_ROOT,
+    prepare_output_directory,
+    require_directory,
+    require_file,
+    write_json,
+)
 PANDEMIC_EXCLUDED_TARGET_STARTS = {
     pd.Timestamp("2020-04-01"),
     pd.Timestamp("2020-10-01"),
     pd.Timestamp("2021-04-01"),
 }
 
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from src.h1n1_benchmarks import DEFAULT_HALF_YEAR_WINDOWS  # noqa: E402
+from src.forecasting.subclade.benchmarks import DEFAULT_HALF_YEAR_WINDOWS  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -62,13 +67,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--include-pandemic", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
-
-
-def require_file(path: Path, label: str) -> Path:
-    resolved = path.expanduser().resolve()
-    if not resolved.is_file():
-        raise FileNotFoundError(f"{label} does not exist: {resolved}")
-    return resolved
 
 
 def resolve_cutoffs(values: list[str], include_pandemic: bool) -> list[pd.Timestamp]:
@@ -138,17 +136,16 @@ def main() -> None:
     args = parse_args()
     instances_path = require_file(args.query_instances_csv, "Query instance CSV")
     source_path = require_file(args.serum_source_csv, "Serum source CSV")
-    embedding_dir = args.embedding_dir.expanduser().resolve()
-    if not embedding_dir.is_dir():
-        raise FileNotFoundError(f"Embedding directory does not exist: {embedding_dir}")
+    embedding_dir = require_directory(args.embedding_dir, "Embedding directory")
     output_dir = args.output_dir.expanduser().resolve()
     cutoffs_path = output_dir / "forecast_cutoffs.csv"
     panels_path = output_dir / "frozen_serum_panels.csv"
     manifest_path = output_dir / "panel_manifest.json"
-    existing = [path for path in (cutoffs_path, panels_path, manifest_path) if path.exists()]
-    if existing and not args.overwrite:
-        raise FileExistsError("Refusing to overwrite: " + ", ".join(map(str, existing)))
-    output_dir.mkdir(parents=True, exist_ok=True)
+    output_dir = prepare_output_directory(
+        output_dir,
+        [cutoffs_path, panels_path, manifest_path],
+        overwrite=args.overwrite,
+    )
 
     instances = pd.read_csv(instances_path, usecols=["collection_date"])
     conditions = source_serum_conditions(source_path, embedding_dir)
@@ -181,7 +178,7 @@ def main() -> None:
         "embedding_dir": str(embedding_dir),
         "outputs": {"cutoffs": str(cutoffs_path), "panels": str(panels_path)},
     }
-    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json(manifest_path, manifest)
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
 
 

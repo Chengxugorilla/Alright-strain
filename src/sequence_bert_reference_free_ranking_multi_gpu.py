@@ -1,6 +1,6 @@
-"""Compatibility entry point for the reference-free BERT ranking task."""
+"""Compatibility entry point for the Fitness reference-free scorer."""
 
-from reference_free_bert_ranking.sequence_bert_reference_free_ranking_multi_gpu import main
+from fitness.reference_free_bert_ranking.sequence_bert_reference_free_ranking_multi_gpu import main
 
 
 if __name__ == "__main__":

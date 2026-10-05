@@ -1,5 +1,11 @@
 *.fasta
-/clade注释_sorted/
+__pycache__/
+*.pyc
+/data/raw/
+/data/interim/*
+!/data/interim/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
 .DS_Store
 /outputs/
 *.zip

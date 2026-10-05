@@ -1,0 +1,17 @@
+{
+  "input_tsv": "data/raw/nextclade/H1N1/h1n1_results_MW626062_sorted.tsv",
+  "label_mode": "nextclade",
+  "bin_days": 14,
+  "start_date": "2017-01-01",
+  "cutoff": "2024-12-31",
+  "horizon_bins": 12,
+  "lookback_bins": 26,
+  "gen_days": 2.7,
+  "inference": "nuts_from_map",
+  "num_warmup": 200,
+  "num_samples": 200,
+  "svi_iters": 50000,
+  "svi_lr": 0.0004,
+  "pivot_window": 3,
+  "collapse_min_seqs": 0
+}

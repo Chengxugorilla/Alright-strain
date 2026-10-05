@@ -1,0 +1,5 @@
+scheme_id,query_window,reference_window,reference_type,deduplication,all_cutoffs_pair_count,relative_to_frozen_serum,change_vs_5y_past_strains,notes
+frozen_serum_annual_query,"(T-1 year, T]","serumDate < T","H1N1 serum conditions (56-75 per cutoff)","Existing serum-condition panel",2965570,1.0000,,Current completed serum-virus baseline
+past_strains_5y_excluding_recent6m,"(T-6 months, T]","[T-5 years, T-6 months)","Past HA1 strains","Unique query_id; remove past HA1 also present in current",129321685,43.6078,0.0000,Full virus-virus proxy with reference and query passage fixed to <CELL>
+past_strains_3y_excluding_recent6m,"(T-6 months, T]","[T-3 years, T-6 months)","Past HA1 strains","Unique query_id; remove past HA1 also present in current",86440609,29.1474,-0.3316,Reduces pair count by 33.16% relative to the 5-year past-strain scheme
+past_strains_2y_excluding_recent6m,"(T-6 months, T]","[T-2 years, T-6 months)","Past HA1 strains","Unique query_id; remove past HA1 also present in current",65038961,21.9329,-0.4971,Reduces pair count by 49.71% relative to the 5-year past-strain scheme

@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from src.h1n1_benchmarks import (
+from src.forecasting.subclade.benchmarks import (
     build_window_aligned_counts,
     counts_to_frequencies,
     evaluate_frequency_forecast,
@@ -16,7 +16,7 @@ from src.h1n1_benchmarks import (
     run_rolling_six_model_backtest,
 )
 
-from src.h1n1_subclade_plot import (
+from src.strain_data.nextclade import (
     DEFAULT_START_DATE,
     UNASSIGNED,
     build_binned_tables,
