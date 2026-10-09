@@ -12,13 +12,36 @@ per-forward synchronization.
 
 import argparse
 import hashlib
+import multiprocessing as mp
 import os
 import sqlite3
 import sys
+import traceback
+import warnings
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Keep notebook output focused on the scoring progress.  These warnings are
+# emitted by optional NVML/widget integrations and do not affect CUDA scoring.
+warnings.filterwarnings(
+    "ignore",
+    message=r"The pynvml package is deprecated.*",
+    category=FutureWarning,
+)
+warnings.filterwarnings(
+    "ignore",
+    message=r"Can't initialize NVML",
+    category=UserWarning,
+)
+
 import torch
+from tqdm import TqdmWarning
+
+warnings.filterwarnings(
+    "ignore",
+    message=r"IProgress not found.*",
+    category=TqdmWarning,
+)
 from tqdm.auto import tqdm
 
 
@@ -211,6 +234,139 @@ def score_sequence(sequence, model, tokenizer, device, mask_batch_size, progress
         raw_score += log_probs.sum().item()
         progress.update(len(batch_positions))
     return raw_score, len(positions)
+
+
+def _load_lucavirus(device):
+    """Load one inference model on ``device`` (shared by CLI and notebook use)."""
+    model_path = LUCA_ROOT / "llm/models/lucavirus/v1.0/token_level,span_level,seq_level/lucavirus/20240815023346/checkpoint-step3800000"
+    log_path = LUCA_ROOT / "llm/logs/lucavirus/v1.0/token_level,span_level,seq_level/lucavirus/20240815023346/logs.txt"
+    if not model_path.is_dir() or not log_path.is_file():
+        raise FileNotFoundError("请检查 LucaVirus checkpoint 和 logs.txt 路径。")
+
+    sys.path[:0] = [str(LUCA_ROOT), str(LUCA_ROOT / "src"), str(LUCA_ROOT / "src/llm/lucavirus")]
+    from llm.lucavirus.get_embedding import load_model
+
+    _, _, model, tokenizer = load_model(str(log_path), str(model_path), embedding_inference=False)
+    return model.to(device).half().eval(), tokenizer
+
+
+def _notebook_score_worker(sequences, gpu_id, mask_batch_size, result_queue):
+    """Score one shard.  It must stay module-level so multiprocessing can run it."""
+    try:
+        torch.cuda.set_device(gpu_id)
+        device = torch.device(f"cuda:{gpu_id}")
+        model, tokenizer = _load_lucavirus(device)
+        scores = {}
+        for sequence in sequences:
+            raw_score, valid_length = score_sequence(
+                sequence, model, tokenizer, device, mask_batch_size, progress=_QueueProgress(result_queue)
+            )
+            scores[sequence] = raw_score / valid_length
+        result_queue.put(("ok", scores))
+    except Exception:
+        result_queue.put(("error", traceback.format_exc()))
+
+
+class _QueueProgress:
+    """Forward worker progress to the notebook's single display process."""
+
+    def __init__(self, result_queue):
+        self.result_queue = result_queue
+
+    def update(self, amount):
+        self.result_queue.put(("progress", amount))
+
+
+def score_sequences(sequences, gpu_ids=(0,), mask_batch_size=128):
+    """Return ``{sequence: fitness}`` for an iterable of amino-acid sequences.
+
+    This is the notebook-facing API.  It accepts a pandas Series, list, or any
+    iterable, normalizes sequences exactly as FASTA input does, and scores each
+    distinct sequence once.  The command-line FASTA workflow is unchanged.
+
+    For more than one GPU this uses ``spawn`` workers.  Unlike ``fork``, this
+    is safe after the notebook process has initialized CUDA.
+    """
+    if mask_batch_size <= 0:
+        raise ValueError("mask_batch_size 必须为正整数。")
+
+    unique_sequences = []
+    seen = set()
+    for sequence in sequences:
+        if not isinstance(sequence, str):
+            raise TypeError("sequences 中的每项必须是字符串。")
+        sequence = "".join(sequence.split()).upper()
+        if not sequence:
+            raise ValueError("sequences 中不能包含空序列。")
+        if sequence not in seen:
+            seen.add(sequence)
+            unique_sequences.append(sequence)
+    if not unique_sequences:
+        return {}
+
+    gpu_ids = tuple(gpu_ids)
+    if not gpu_ids:
+        raise ValueError("至少指定一张 GPU。")
+    available = torch.cuda.device_count()
+    if any(not isinstance(gpu_id, int) or gpu_id < 0 or gpu_id >= available for gpu_id in gpu_ids):
+        raise ValueError(f"gpu_ids 必须是当前可见 GPU 的编号；可用范围为 0 到 {available - 1}。")
+
+    shards = [unique_sequences[offset::len(gpu_ids)] for offset in range(len(gpu_ids))]
+    jobs = [(shard, gpu_id) for shard, gpu_id in zip(shards, gpu_ids) if shard]
+    if len(jobs) == 1:
+        shard, gpu_id = jobs[0]
+        torch.cuda.set_device(gpu_id)
+        device = torch.device(f"cuda:{gpu_id}")
+        model, tokenizer = _load_lucavirus(device)
+        scores = {}
+        progress = tqdm(
+            total=sum(sum(residue in AA for residue in sequence) for sequence in shard),
+            desc="BERT 打分",
+            unit="aa",
+        )
+        try:
+            for sequence in shard:
+                raw_score, valid_length = score_sequence(
+                    sequence, model, tokenizer, device, mask_batch_size, progress
+                )
+                scores[sequence] = raw_score / valid_length
+        finally:
+            progress.close()
+        return scores
+
+    # CUDA contexts cannot safely be inherited by ``fork`` workers.  Notebook
+    # kernels commonly initialize CUDA before this function is called, so use
+    # a fresh interpreter for each worker instead.
+    context = mp.get_context("spawn")
+    result_queue = context.Queue()
+    processes = [
+        context.Process(target=_notebook_score_worker, args=(shard, gpu_id, mask_batch_size, result_queue))
+        for shard, gpu_id in jobs
+    ]
+    for process in processes:
+        process.start()
+
+    total_positions = sum(sum(residue in AA for residue in sequence) for sequence in unique_sequences)
+    progress = tqdm(total=total_positions, desc="BERT 打分", unit="aa")
+    scores = {}
+    errors = []
+    completed_workers = 0
+    while completed_workers < len(processes):
+        status, payload = result_queue.get()
+        if status == "progress":
+            progress.update(payload)
+        elif status == "ok":
+            scores.update(payload)
+            completed_workers += 1
+        else:
+            errors.append(payload)
+            completed_workers += 1
+    progress.close()
+    for process in processes:
+        process.join()
+    if errors:
+        raise RuntimeError("GPU 打分失败：\n" + "\n".join(errors))
+    return scores
 
 
 def main():
